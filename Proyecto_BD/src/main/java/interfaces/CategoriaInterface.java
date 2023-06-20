@@ -2,14 +2,14 @@ package interfaces;
 
 import java.util.List;
 
-import clases.Productos;
+import clases.Categoria;
 
 public interface CategoriaInterface {
-public int createSubject(Productos subject);
+public int createSubject(Categoria subject);
 	
-	public List<Productos> listSubject();
+	public List<Categoria> listSubject();
 	
-	public Productos getSubject(String id);
+	public Categoria getSubject(String id);
 	
 	public int delateSubject(String id);
 }

@@ -7,19 +7,19 @@ import interfaces.CategoriaInterface;
 public class CategoriaModel implements CategoriaInterface {
 
 	@Override
-	public int createSubject(Productos subject) {
+	public int createSubject(Categoria subject) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public List<Productos> listSubject() {
+	public List<Categoria> listSubject() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Productos getSubject(String id) {
+	public Categoria getSubject(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -29,5 +29,4 @@ public class CategoriaModel implements CategoriaInterface {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
 }
