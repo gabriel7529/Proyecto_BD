@@ -2,8 +2,7 @@ package clases;
 
 public class Categoria {
 	int catProCod;
-	String Nombre;
-	char estado;
+	String Nombre, estado;
 	public int getCatProCod() {
 		return catProCod;
 	}
@@ -16,10 +15,10 @@ public class Categoria {
 	public void setNombre(String nombre) {
 		Nombre = nombre;
 	}
-	public char getEstado() {
+	public String getEstado() {
 		return estado;
 	}
-	public void setEstado(char estado) {
+	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 }
