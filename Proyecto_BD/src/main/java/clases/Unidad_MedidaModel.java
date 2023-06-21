@@ -146,11 +146,10 @@ public class Unidad_MedidaModel implements Unidad_MedidaInterface {
 	    
 	    try {
 	        cn = MysqlConnection.getConexion();
-	        String sql = "UPDATE categorias_productos SET medUniNom=? WHERE medUniCod=?";
+	        String sql = "UPDATE gzz_unidades_de_medida SET uniMedNom=? WHERE uniMedCod=?";
 	        psm = cn.prepareStatement(sql);
-	        psm.setInt(1, subject.getUniMedCod());
-			psm.setString(2, subject.getUniMedNom());
-	      
+	        psm.setString(1, subject.getUniMedNom());
+	        psm.setInt(2, subject.getUniMedCod());
 	        value = psm.executeUpdate();
 	    } catch (Exception e) {
 	        e.printStackTrace();
