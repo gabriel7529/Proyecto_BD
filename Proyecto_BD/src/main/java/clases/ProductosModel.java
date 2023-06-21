@@ -26,8 +26,8 @@ public class ProductosModel implements ProductosInterface{
 			psm.setDouble(6, subject.getProPreCom());
 			psm.setString(7, subject.getProEstReg());
 			psm.setInt(8, subject.getProCat());
-			
 			value = psm.executeUpdate();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
