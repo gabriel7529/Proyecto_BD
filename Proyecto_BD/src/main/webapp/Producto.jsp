@@ -47,7 +47,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css " 
             <option value="N">Desconocido</option>
             
      </select><br><br>
-      <label for="name">Categoria del producto</label><br>    
+     <label for="name">Categoria del producto</label><br>    
 	 <select id="codcat" name="codcat">
 	 <%	
 			List<Categoria> listSubject2 = (List<Categoria>) request.getAttribute("data2");

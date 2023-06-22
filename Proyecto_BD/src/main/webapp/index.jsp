@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Indice</title>
+<title>Conexión con la Base de datos</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-	<h1>Bienvenido al Índice</h1>
+	<h1>Tablas disponibles</h1>
     <ul>
         <li><a href="Servlet2?type=inicio">Productos</a></li>
         <li><a href="http://localhost:8080/Proyecto_BD/login2.jsp">Cliente</a></li>

@@ -92,7 +92,7 @@ public class Servlet2 extends HttpServlet {
 		int subject = productosModel.delateSubject(idSubject);
 		List<Productos> data = productosModel.listSubject();
 		request.setAttribute("data", data);
-		request.getRequestDispatcher("subject.jsp").forward(request, response);
+		request.getRequestDispatcher("listaProducto.jsp").forward(request, response);
 	}
 
 	private void editSubject(HttpServletRequest request, HttpServletResponse response)
@@ -100,12 +100,12 @@ public class Servlet2 extends HttpServlet {
 
 		int code = Integer.parseInt(request.getParameter("code"));
 		String name = request.getParameter("name");
-		int uniMed = Integer.parseInt(request.getParameter("uniMed"));
+		int uniMed = Integer.parseInt(request.getParameter("coduni"));
 		int stock = Integer.parseInt(request.getParameter("stock"));
-		double precioVenta = Double.parseDouble(request.getParameter("PreVen"));
-		double precioCompra = Double.parseDouble(request.getParameter("PreCom"));
+		double precioVenta = Double.parseDouble(request.getParameter("preciov"));
+		double precioCompra = Double.parseDouble(request.getParameter("precioc"));
 		String estado = request.getParameter("estado");
-		int cat = Integer.parseInt(request.getParameter("cat"));
+		int cat = Integer.parseInt(request.getParameter("codcat"));
 
 		Productos subject = new Productos();
 		subject.setProCod(code);
@@ -116,12 +116,16 @@ public class Servlet2 extends HttpServlet {
 		subject.setProPreCom(precioCompra);
 		subject.setProEstReg(estado);
 		subject.setProCat(cat);
+		
 
 		ProductosModel clienteModel = new ProductosModel();
 		int rspt = clienteModel.updateSubject(subject);
+		
 		List<Productos> data = clienteModel.listSubject();
+		
 		request.setAttribute("data", data);
-		request.getRequestDispatcher("subject.jsp").forward(request, response);
+		
+		request.getRequestDispatcher("listaProducto.jsp").forward(request, response);
 	}
 
 	protected void registerSubject(HttpServletRequest request, HttpServletResponse response)
@@ -165,7 +169,7 @@ public class Servlet2 extends HttpServlet {
 
 		List<Productos> data = clienteModel.listSubject();
 		request.setAttribute("data", data);
-		request.getRequestDispatcher("subject.jsp").forward(request, response);
+		request.getRequestDispatcher("listaProducto.jsp").forward(request, response);
 
 	}
 
@@ -174,10 +178,15 @@ public class Servlet2 extends HttpServlet {
 		String idSubject = request.getParameter("id");
 		ProductosModel clienteModel = new ProductosModel();
 		Productos subject = clienteModel.getSubject(idSubject);
+		CategoriaModel categoriasModel = new CategoriaModel();
+		Unidad_MedidaModel unidadModel = new Unidad_MedidaModel();
 		List<Productos> data = clienteModel.listSubject();
-		System.out.println();
+		List<Unidad_Medida> data3 = unidadModel.listSubject();
+		List<Categoria> data2 = categoriasModel.listSubject();
 		request.setAttribute("subject", subject);
 		request.setAttribute("data", data);
-		request.getRequestDispatcher("subject2.jsp").forward(request, response);
+		request.setAttribute("data2", data2);
+		request.setAttribute("data3", data3);
+		request.getRequestDispatcher("EditarProducto.jsp").forward(request, response);
 	}
 }

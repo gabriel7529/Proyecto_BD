@@ -59,7 +59,7 @@ public class ProductosModel implements ProductosInterface{
 				subject.setUniMedCod(rs.getInt("UniMedCod"));
 				subject.setProSto(rs.getInt("ProSto"));
 				subject.setProPreVen(rs.getDouble("ProPreVen"));
-				subject.setProPreCom(rs.getDouble("ProEstReg"));
+				subject.setProPreCom(rs.getDouble("ProPreCom"));
 				subject.setProEstReg(rs.getString("ProEstReg"));
 				subject.setProCat(rs.getInt("ProCat"));
 				listSubject.add(subject);
@@ -90,7 +90,7 @@ public class ProductosModel implements ProductosInterface{
 		try {
 			
 			cn = MysqlConnection.getConexion();
-			String sql = "SELECT * FROM l1t_productos WHERE ProCod=?";
+			String sql = "SELECT * FROM l1t_productos WHERE proCod=?";
 			psm = cn.prepareStatement(sql);
 			psm.setString(1, id);
 			rs = psm.executeQuery();
@@ -101,7 +101,7 @@ public class ProductosModel implements ProductosInterface{
 				subject.setUniMedCod(rs.getInt("UniMedCod"));
 				subject.setProSto(rs.getInt("ProSto"));
 				subject.setProPreVen(rs.getDouble("ProPreVen"));
-				subject.setProPreCom(rs.getDouble("ProEstReg"));
+				subject.setProPreCom(rs.getDouble("ProPreCom"));
 				subject.setProEstReg(rs.getString("ProEstReg"));
 				subject.setProCat(rs.getInt("ProCat"));
 			}
