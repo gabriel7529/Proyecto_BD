@@ -59,7 +59,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css " 
 				}
 			}
 	  %>
-	  
+	 </select>
 	 <input type="hidden" name="type" id="type" value="register">         
      <br><br>
 	 <button type="submit" class="btn btn-primary">Enviar datos</button>

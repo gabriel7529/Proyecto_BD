@@ -26,12 +26,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css " 
             <option value="N">Desconocido</option>
             
      </select><br><br>    
-        <select id="type" name="type">
-            <option value="register">Registrar</option>
-            <option value="info">informacion</option>
-            <option value="delete">Eliminar</option>
-            <option value="edit">Editar</option>
-        </select><br><br>
+     <input type="hidden" name="type" id="type" value="register">   
 	 <button type="submit" class="btn btn-primary">Enviar datos</button>
 	 </form> 
 </div> 

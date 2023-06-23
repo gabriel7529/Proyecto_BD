@@ -99,6 +99,11 @@ table td.actions {
 		</div>
 	</div>
 </div>
+<a href="http://localhost:8080/Proyecto_BD/index.jsp">
+    <button style="background-color: blue; color: white; padding: 5px 10px; border: none; cursor: pointer;">
+        Menú Principal
+    </button>
+</a>
 
 </body>
 </html>

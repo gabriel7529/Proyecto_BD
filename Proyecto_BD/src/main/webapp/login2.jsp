@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Validación</title>
+<title>Cliente</title>
 <link rel="stylesheet" href="css/estilos.css"/> 
 <link 
 href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css " rel="stylesheet" integrity="sha3841BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -13,7 +13,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css " 
 <body>
 
 <div class="container">
-	 <h2>Registrar Cursos</h2>   
+	 <h2>Registrar Clientes</h2>   
 	 <form action="SubjectServlet" method="post">      
 	 <label for="Code">Código del clientes</label><br>
 	 <input type="text" name="code" id="code" placeholder="Código"/><br><br>      
@@ -22,14 +22,8 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css " 
 	 <label for="RUC">RUC del Cliente</label><br>     
 	 <input type="text" name="RUC" id="RUC" placeholder="RUC"/><br><br>      
 	 <label for="text">Dirección Cliente</label><br>     
-	 <input type="text" name="direc" id="direc" placeholder="Dirección"/><br><br>     
-	
-        <select id="type" name="type">
-            <option value="register">Registrar</option>
-            <option value="info">informacion</option>
-            <option value="delete">Eliminar</option>
-            <option value="edit">Editar</option>
-        </select><br><br>
+	 <input type="text" name="direc" id="direc" placeholder="Dirección"/><br><br> 
+	 <input type="hidden" name="type" id="type" value="register">    
 	 <button type="submit" class="btn btn-primary">Enviar datos</button>
 	 </form> 
 </div> 
