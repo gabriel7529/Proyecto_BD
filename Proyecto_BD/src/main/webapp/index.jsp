@@ -12,7 +12,7 @@
     <ul>
         <li><a href="Servlet2?type=inicio">Productos</a></li>
         <li><a href="SubjectServlet?type=list">Clientes</a></li>
-        <li><a href="http://localhost:8080/Proyecto_BD/Categoria.jsp">Categorías</a></li>
+        <li><a href="Servlet3?type=list">Categorías</a></li>
         <li><a href="Servlet4?type=list">Unidad de medida</a></li>
     </ul>
 </body>
