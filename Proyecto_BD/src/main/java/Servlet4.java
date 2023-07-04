@@ -61,17 +61,23 @@ public class Servlet4 extends HttpServlet {
 			editSubject(request, response);
 			break;
 		case "delete":
-			deleteSubject(request, response);
+			getSubject(request, response, type);
 			break;
 		case "info":
-			getSubject(request, response);
+			getSubject(request, response, type);
+			break;
+		case "reac":
+			getSubject(request, response, type);
+			break;
+		case "inac":
+			getSubject(request, response, type);
 			break;
 		default:
 			request.setAttribute("mensaje", "Ocurrió un problema");
 		}
 	}
 
-	private void deleteSubject(HttpServletRequest request, HttpServletResponse response)
+/*	private void deleteSubject(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String idSubject = request.getParameter("id");
 		Unidad_MedidaModel unidadModel = new Unidad_MedidaModel();
@@ -81,16 +87,18 @@ public class Servlet4 extends HttpServlet {
 		request.setAttribute("data", data);
 		request.getRequestDispatcher("listaUnidad.jsp").forward(request, response);
 	}
-
+*/
 	private void editSubject(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		int code = Integer.parseInt(request.getParameter("code"));
 		String name = request.getParameter("name");
+		String estado = request.getParameter("estado");
 
 		Unidad_Medida subject = new Unidad_Medida();
 		subject.setUniMedCod(code);
 		subject.setUniMedNom(name);
+		subject.setUniMedEst(estado);
 
 		Unidad_MedidaModel unidadModel = new Unidad_MedidaModel();
 		int rspt = unidadModel.updateSubject(subject);
@@ -103,10 +111,12 @@ public class Servlet4 extends HttpServlet {
 			throws ServletException, IOException {
 		int code = Integer.parseInt(request.getParameter("code"));
 		String name = request.getParameter("name");
+		String estado = request.getParameter("estado");
 
 		Unidad_Medida subject = new Unidad_Medida();
 		subject.setUniMedCod(code);
 		subject.setUniMedNom(name);
+		subject.setUniMedEst(estado);
 
 		Unidad_MedidaModel model = new Unidad_MedidaModel();
 		int value = model.createSubject(subject);
@@ -130,14 +140,26 @@ public class Servlet4 extends HttpServlet {
 
 	}
 
-	protected void getSubject(HttpServletRequest request, HttpServletResponse response)
+	protected void getSubject(HttpServletRequest request, HttpServletResponse response, String opcion)
 			throws ServletException, IOException {
+		String respuesta;
 		String idSubject = request.getParameter("id");
+		
 		Unidad_MedidaModel unidadModel = new Unidad_MedidaModel();
 		Unidad_Medida subject = unidadModel.getSubject(idSubject);
+		if(opcion.equals("info"))
+			respuesta = subject.getUniMedEst();
+		else if (opcion.equals ("reac"))
+			respuesta = "A";
+		else if (opcion.equals("inac"))
+			respuesta = "I";
+		else
+			respuesta = "*";
+		
 		List<Unidad_Medida> data = unidadModel.listSubject();
 		request.setAttribute("subject", subject);
-		request.setAttribute("data", data);
+		request.setAttribute("type", opcion);
+		request.setAttribute("respuesta", respuesta);
 		request.getRequestDispatcher("EditarUnidad.jsp").forward(request, response);
 	}
 

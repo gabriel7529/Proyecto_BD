@@ -58,7 +58,7 @@ public class SubjectServlet extends HttpServlet {
  
 		int code = Integer.parseInt(request.getParameter("code"));     
 	    String name = request.getParameter("name");
-	    int ruc = Integer.parseInt(request.getParameter("ruc"));
+	    String ruc = request.getParameter("ruc");
 	    String direccion = request.getParameter("direc");
 	    Clientes subject = new Clientes(); 
 	    subject.setCliCod(code);
@@ -75,7 +75,7 @@ public class SubjectServlet extends HttpServlet {
 	protected void registerSubject(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	  int code = Integer.parseInt(request.getParameter("code"));     
 	      String name = request.getParameter("name");
-	      int ruc = Integer.parseInt(request.getParameter("RUC"));
+	      String ruc = request.getParameter("RUC");
 	      String direccion = request.getParameter("direc");
 	      
 	      Clientes subject = new Clientes();

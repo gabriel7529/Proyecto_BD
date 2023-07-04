@@ -2,8 +2,8 @@ package clases;
 
 public class Clientes {
 	
-	public int cliCod, cliRuc;
-	public String cliDir, cliNom;
+	public int cliCod;
+	public String cliDir, cliNom, cliEst, cliRuc;
 	
 	public int getCliCod() {
 		return cliCod;
@@ -11,10 +11,10 @@ public class Clientes {
 	public void setCliCod(int cliCod) {
 		this.cliCod = cliCod;
 	}
-	public int getCliRuc() {
+	public String getCliRuc() {
 		return cliRuc;
 	}
-	public void setCliRuc(int cliRuc) {
+	public void setCliRuc(String cliRuc) {
 		this.cliRuc = cliRuc;
 	}
 	public String getCliDir() {
@@ -29,5 +29,12 @@ public class Clientes {
 	public void setCliNom(String cliNom) {
 		this.cliNom = cliNom;
 	}
+	public String getCliEst() {
+		return cliEst;
+	}
+	public void setCliEst(String cliEst) {
+		this.cliEst = cliEst;
+	}
+	
 	
 }

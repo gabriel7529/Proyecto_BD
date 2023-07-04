@@ -15,10 +15,11 @@ public class Unidad_MedidaModel implements Unidad_MedidaInterface {
 
 		try {
 			cn = MysqlConnection.getConexion();
-			String sql = "INSERT INTO gzz_unidades_de_medida VALUES (?, ?)";
+			String sql = "INSERT INTO gzz_unidades_de_medida VALUES (?, ?, ?)";
 			psm = cn.prepareStatement(sql);
 			psm.setInt(1, subject.getUniMedCod());
 			psm.setString(2, subject.getUniMedNom());
+			psm.setString(3, subject.getUniMedEst());
 			
 			value = psm.executeUpdate();
 		} catch (Exception e) {
@@ -51,6 +52,7 @@ public class Unidad_MedidaModel implements Unidad_MedidaInterface {
 				Unidad_Medida subject = new Unidad_Medida();
 				subject.setUniMedCod(rs.getInt("UniMedCod"));
 				subject.setUniMedNom(rs.getString("UniMedNom"));
+				subject.setUniMedEst(rs.getString("UniMedEst"));
 				listSubject.add(subject);
 			}
 
@@ -90,6 +92,7 @@ public class Unidad_MedidaModel implements Unidad_MedidaInterface {
 				subject = new Unidad_Medida();
 				subject.setUniMedCod(rs.getInt("UniMedCod"));
 				subject.setUniMedNom(rs.getString("UniMedNom"));
+				subject.setUniMedEst(rs.getString("UniMedEst"));
 				
 			}
 		} catch (Exception e) {
@@ -146,10 +149,11 @@ public class Unidad_MedidaModel implements Unidad_MedidaInterface {
 	    
 	    try {
 	        cn = MysqlConnection.getConexion();
-	        String sql = "UPDATE gzz_unidades_de_medida SET uniMedNom=? WHERE uniMedCod=?";
+	        String sql = "UPDATE gzz_unidades_de_medida SET uniMedNom=?, uniMedEst=? WHERE uniMedCod=?";
 	        psm = cn.prepareStatement(sql);
 	        psm.setString(1, subject.getUniMedNom());
-	        psm.setInt(2, subject.getUniMedCod());
+	        psm.setString(2, subject.getUniMedEst());
+	        psm.setInt(3, subject.getUniMedCod());
 	        value = psm.executeUpdate();
 	    } catch (Exception e) {
 	        e.printStackTrace();

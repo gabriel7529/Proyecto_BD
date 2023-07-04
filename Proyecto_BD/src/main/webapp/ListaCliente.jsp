@@ -86,8 +86,7 @@ table td.actions {
     </button>
 </a>
 		    	</td>
-		     </tr>
-		    	
+		     </tr>    	
 		    <%
 		    	}
 			} 

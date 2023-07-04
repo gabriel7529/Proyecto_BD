@@ -17,12 +17,13 @@ public class ClienteModel implements SubjectInterface{
 		
 		try {
 			cn = MysqlConnection.getConexion();
-			String sql = "INSERT INTO clientes VALUES (?, ?, ?, ?)";
+			String sql = "INSERT INTO clientes VALUES (?, ?, ?, ?, ?)";
 			psm = cn.prepareStatement(sql);
 			psm.setInt(1, subject.getCliCod());
 			psm.setString(2, subject.getCliNom());
-			psm.setInt(3, subject.getCliRuc());
+			psm.setString(3, subject.getCliRuc());
 			psm.setString(4, subject.getCliDir());
+			psm.setString(5, subject.getCliEst());
 			
 			value = psm.executeUpdate();
 		} catch (Exception e) {
@@ -53,8 +54,9 @@ public class ClienteModel implements SubjectInterface{
 				Clientes subject = new Clientes();
 				subject.setCliCod(rs.getInt("CliCod"));
 				subject.setCliNom(rs.getString("CliNom"));
-				subject.setCliRuc(rs.getInt("CilRuc"));
+				subject.setCliRuc(rs.getString("CilRuc"));
 				subject.setCliDir(rs.getString("CliDir"));
+				subject.setCliEst(rs.getString("CliEstReg"));
 				listSubject.add(subject);
 			}
 			
@@ -91,8 +93,9 @@ public class ClienteModel implements SubjectInterface{
 				subject = new Clientes();
 				subject.setCliCod(rs.getInt("CliCod"));
 				subject.setCliNom(rs.getString("CliNom"));
-				subject.setCliRuc(rs.getInt("CilRuc"));
+				subject.setCliRuc(rs.getString("CliRuc"));
 				subject.setCliDir(rs.getString("CliDir"));
+				subject.setCliEst(rs.getString("CliEstReg"));
 				
 			}
 		}catch (Exception e) {
@@ -143,10 +146,10 @@ public class ClienteModel implements SubjectInterface{
 	    
 	    try {
 	        cn = MysqlConnection.getConexion();
-	        String sql = "UPDATE clientes SET cliNom=?, cilRuc=?,cliDir=? WHERE cliCod=?";
+	        String sql = "UPDATE clientes SET cliNom=?, cilRuc=?,cliDir=?, cliEstREG=? WHERE cliCod=?";
 	        psm = cn.prepareStatement(sql);
 	        psm.setString(1, subject.getCliNom());
-	        psm.setInt(2, subject.getCliRuc());
+	        psm.setString(2, subject.getCliRuc());
 	        psm.setString(3, subject.getCliDir());
 	        psm.setInt(4, subject.getCliCod());
 	        value = psm.executeUpdate();
