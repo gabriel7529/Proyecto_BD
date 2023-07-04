@@ -146,12 +146,13 @@ public class ClienteModel implements SubjectInterface{
 	    
 	    try {
 	        cn = MysqlConnection.getConexion();
-	        String sql = "UPDATE clientes SET cliNom=?, cilRuc=?,cliDir=?, cliEstREG=? WHERE cliCod=?";
+	        String sql = "UPDATE clientes SET cliNom=?, cliRuc=?,cliDir=?, cliEstReg=? WHERE cliCod=?";
 	        psm = cn.prepareStatement(sql);
 	        psm.setString(1, subject.getCliNom());
 	        psm.setString(2, subject.getCliRuc());
 	        psm.setString(3, subject.getCliDir());
-	        psm.setInt(4, subject.getCliCod());
+	        psm.setString(4, subject.getCliEst());
+	        psm.setInt(5, subject.getCliCod());
 	        value = psm.executeUpdate();
 	    } catch (Exception e) {
 	        e.printStackTrace();
