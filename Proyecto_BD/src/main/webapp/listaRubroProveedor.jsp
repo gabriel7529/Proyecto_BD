@@ -1,5 +1,5 @@
 <%@ page import="java.util.*"%>
-<%@ page import="clases.Categoria"%>
+<%@ page import="clases.RubroProveedor"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,15 +7,15 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/unidadLista.css" />
-<title>Lista de Unidades de medida</title>
+<title>Lista de Rubros de proveedores</title>
 </head>
 <body>
 	<div class='container'>
 		<div class='row'>
 			<div class='col-6 col-sm-4'>
 				<div class='col-6 col-sm-4'>
-					<h3>Lista de Unidades de medida</h3>
-					<a href="http://localhost:8080/Proyecto_BD/Unidad.jsp">
+					<h3>Lista de Rubros de proveedores</h3>
+					<a href="http://localhost:8080/Proyecto_BD/RubroProveedor.jsp">
 						<button class="btn btn-blue">Adiccionar</button>
 					</a>
 					<table class='table'>
@@ -29,22 +29,22 @@
 						</thead>
 						<tbody>
 							<%
-							List<Categoria> listSubject = (List<Categoria>) request.getAttribute("data");
+							List<RubroProveedor> listSubject = (List<RubroProveedor>) request.getAttribute("data");
 							if (listSubject != null) {
-								for (Categoria item : listSubject) {
+								for (RubroProveedor item : listSubject) {
 							%>
 							<tr onclick="selectRow(this);">
-								<td><%=item.getCatProCod()%></td>
-								<td><%=item.getNombre()%></td>
-								<td><%=item.getEstado()%></td>
+								<td><%=item.getRubProCod()%></td>
+								<td><%=item.getRubNom()%></td>
+								<td><%=item.getRubEstReg()%></td>
 								<td class="actions hidden"><a
-									href="Servlet3?type=info&id=<%=item.getCatProCod()%>">
+									href="Servlet5?type=info&id=<%=item.getRubProCod()%>">
 										<button class="btn btn-green">Modificar</button>
-								</a> <a href="Servlet3?type=delete&id=<%=item.getCatProCod()%>">
+								</a> <a href="Servlet5?type=delete&id=<%=item.getRubProCod()%>">
 										<button class="btn btn-red">Eliminar</button>
-								</a> <a href="Servlet3?type=inac&id=<%=item.getCatProCod()%>">
+								</a> <a href="Servlet5?type=inac&id=<%=item.getRubProCod()%>">
 										<button class="btn btn-yellow">Inactivar</button>
-								</a> <a href="Servlet3?type=reac&id=<%=item.getCatProCod()%>">
+								</a> <a href="Servlet5?type=reac&id=<%=item.getRubProCod()%>">
 										<button class="btn btn-purple">Reactivar</button>
 								</a></td>
 							</tr>
@@ -58,10 +58,8 @@
 			</div>
 		</div>
 	</div>
-	<a href="Servlet3?type=list">
-		<button
-			class="btn btn-blue">
-			Cancelar</button>
+	<a href="Servlet5?type=list">
+		<button class="btn btn-blue">Cancelar</button>
 	</a>
 	<a href="http://localhost:8080/Proyecto_BD/index.jsp">
 		<button class="btn btn-blue">Salir</button>

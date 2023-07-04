@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/categoria.css" />
+<link rel="stylesheet" href="css/unidadEditar.css" />
 </head>
 <body>
 	<%
@@ -20,18 +20,18 @@
 			<div class="form-group">
 				<h1>Editar Categoria</h1>
 				<label class="text-secondary">Código</label><br> <input
-					type="hidden" name="code" id="code"
+					name="code" id="code"
 					value="<%=(subject != null) ? subject.getCatProCod() : ""%>"
 					readonly onmousedown="return false;">
 			</div>
 			<div class="form-group">
-				<label class="text-secondary">Nombre</label> <input
+				<label class="text-secondary">Nombre</label><br> <input
 					class="form-control" type="text" name="name" id="name"
 					value="<%=(subject != null) ? subject.getNombre() : ""%>"
 					<%=(type.equals("info") && !texto.equals("I") && !texto.equals("*")) ? "" : "readonly"%>>
 			</div>
 			<div class="form-group">
-				<label class="text-secondary">Estado</label> <input
+				<label class="text-secondary">Estado</label><br> <input
 					class="form-control" type="text" name="estado" id="estado"
 					value="<%=texto%>" readonly onmousedown="return false;">
 			</div>
