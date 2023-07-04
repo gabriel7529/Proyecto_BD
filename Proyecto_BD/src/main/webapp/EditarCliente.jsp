@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/categoria.css" />
+<link rel="stylesheet" href="css/unidadEditar.css" />
 </head>
 <body>
 	<%
@@ -18,25 +18,26 @@
 		<form action="SubjectServlet" method="post">
 			<input type="hidden" name="type" id="type" value="edit">
 			<div class="form-group">
-				<h1>Editar Unidad de Medida</h1>
+				<h1>Editar Cliente</h1>
 				<label class="text-secondary">Código</label><br> <input
 					name="code" id="code"
-					value="<%=(subject != null) ? subject.getCliCod() : ""%>">
+					value="<%=(subject != null) ? subject.getCliCod() : ""%>"
+					value="<%=texto%>" readonly onmousedown="return false;">
 			</div>
 			<div class="form-group">
-				<label class="text-secondary">Nombre</label> <input
+				<label class="text-secondary">Nombre</label><br> <input
 					class="form-control" type="text" name="name" id="name"
 					value="<%=(subject != null) ? subject.getCliNom() : ""%>"
 					<%=(type.equals("info") && !texto.equals("I") && !texto.equals("*")) ? "" : "readonly"%>>
 			</div>
 			<div class="form-group">
-				<label class="text-secondary">RUC</label> <input
+				<label class="text-secondary">RUC</label><br> <input
 					class="form-control" type="text" name="ruc" id="ruc"
 					value="<%=(subject != null) ? subject.getCliRuc() : ""%>"
 					<%=(type.equals("info") && !texto.equals("I") && !texto.equals("*")) ? "" : "readonly"%>>
 			</div>
 			<div class="form-group">
-				<label class="text-secondary">Dirección</label> <input
+				<label class="text-secondary">Dirección</label><br> <input
 					class="form-control" type="text" name="direc" id="direc"
 					value="<%=(subject != null) ? subject.getCliDir() : ""%>"
 					<%=(type.equals("info") && !texto.equals("I") && !texto.equals("*")) ? "" : "readonly"%>>
@@ -53,7 +54,7 @@
 			</div>
 		</form>
 		<div class="button-container">
-			<a href="Servlet4?type=list">
+			<a href="SubjectServlet?type=list">
 				<button>Cancelar</button>
 			</a> <a href="http://localhost:8080/Proyecto_BD/index.jsp">
 				<button>Salir</button>

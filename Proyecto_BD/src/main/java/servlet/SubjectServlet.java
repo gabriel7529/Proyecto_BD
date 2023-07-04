@@ -1,8 +1,5 @@
 package servlet;
 import clases.Clientes;
-import clases.Unidad_Medida;
-import clases.Unidad_MedidaModel;
-
 import java.util.*;
 import clases.ClienteModel;
 
@@ -87,7 +84,8 @@ public class SubjectServlet extends HttpServlet {
 	    subject.setCliDir(direccion);
 	    subject.setCliEst(estado);
 	    ClienteModel clienteModel = new ClienteModel();
-  //  	int rspt = clienteModel.updateSubject(subject);
+	    int rspt = clienteModel.updateSubject(subject);
+	    
     	List<Clientes> data = clienteModel.listSubject();
     	request.setAttribute("data", data);
     	request.getRequestDispatcher("ListaCliente.jsp").forward(request, response);	
@@ -148,10 +146,10 @@ public class SubjectServlet extends HttpServlet {
 		String respuesta;
 		String idSubject = request.getParameter("id");
 		
-		Unidad_MedidaModel unidadModel = new Unidad_MedidaModel();
-		Unidad_Medida subject = unidadModel.getSubject(idSubject);
+		ClienteModel clienteModel = new ClienteModel();
+		Clientes subject = clienteModel.getSubject(idSubject);
 		if(opcion.equals("info"))
-			respuesta = subject.getUniMedEst();
+			respuesta = subject.getCliEst();
 		else if (opcion.equals ("reac"))
 			respuesta = "A";
 		else if (opcion.equals("inac"))

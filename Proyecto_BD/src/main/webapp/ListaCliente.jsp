@@ -15,7 +15,7 @@
 			<div class='col-6 col-sm-4'>
 				<div class='col-6 col-sm-4'>
 					<h3>Lista de Unidades de medida</h3>
-					<a href="http://localhost:8080/Proyecto_BD/Unidad.jsp">
+					<a href="http://localhost:8080/Proyecto_BD/Cliente.jsp">
 						<button class="btn btn-blue">Adiccionar</button>
 					</a>
 					<table class='table'>
@@ -42,13 +42,13 @@
 								<td><%=item.getCliDir()%></td>
 								<td><%=item.getCliEst()%></td>
 								<td class="actions hidden"><a
-									href="Servlet4?type=info&id=<%=item.getCliCod()%>">
+									href="SubjectServlet?type=info&id=<%=item.getCliCod()%>">
 										<button class="btn btn-green">Modificar</button>
-								</a> <a href="Servlet4?type=delete&id=<%=item.getCliCod()%>">
+								</a> <a href="SubjectServlet?type=delete&id=<%=item.getCliCod()%>">
 										<button class="btn btn-red">Eliminar</button>
-								</a> <a href="Servlet4?type=inac&id=<%=item.getCliCod()%>">
+								</a> <a href="SubjectServlet?type=inac&id=<%=item.getCliCod()%>">
 										<button class="btn btn-yellow">Inactivar</button>
-								</a> <a href="Servlet4?type=reac&id=<%=item.getCliCod()%>">
+								</a> <a href="SubjectServlet?type=reac&id=<%=item.getCliCod()%>">
 										<button class="btn btn-purple">Reactivar</button>
 								</a></td>
 							</tr>
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 	</div>
-	<a href="Servlet4?type=list">
+	<a href="SubjectServlet?type=list">
 		<button
 			style="background-color: blue; color: white; padding: 5px 10px; border: none; cursor: pointer;">
 			Cancelar</button>

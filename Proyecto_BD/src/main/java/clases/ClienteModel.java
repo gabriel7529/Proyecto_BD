@@ -54,7 +54,7 @@ public class ClienteModel implements SubjectInterface{
 				Clientes subject = new Clientes();
 				subject.setCliCod(rs.getInt("CliCod"));
 				subject.setCliNom(rs.getString("CliNom"));
-				subject.setCliRuc(rs.getString("CilRuc"));
+				subject.setCliRuc(rs.getString("CliRuc"));
 				subject.setCliDir(rs.getString("CliDir"));
 				subject.setCliEst(rs.getString("CliEstReg"));
 				listSubject.add(subject);

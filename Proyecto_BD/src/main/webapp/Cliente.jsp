@@ -23,17 +23,24 @@
 			<br> <label for="name">Nombre del cliente</label><br> <input
 				type="text" name="name" id="name" placeholder="Nombre" /><br>
 			<br> <label for="RUC">RUC del Cliente</label><br> <input
-				type="text" name="RUC" id="RUC" placeholder="RUC" /><br>
-			<br> <label for="text">Dirección Cliente</label><br> <input
+				type="text" name="RUC" id="RUC" placeholder="RUC" /><br> <br>
+			<label for="text">Dirección Cliente</label><br> <input
 				type="text" name="direc" id="direc" placeholder="Dirección" /><br>
-			<br> <label for="estado">Estado del cliente</label><br>
-			<input type="text" name="estado" id="estado" value="A" readonly
+			<br> <label for="estado">Estado del cliente</label><br> <input
+				type="text" name="estado" id="estado" value="A" readonly
 				onmousedown="return false;" /><br> <input type="hidden"
 				name="type" id="type" value="register">
 			<button type="submit" class="btn btn-primary">Enviar datos</button>
 		</form>
 	</div>
-
+	<a href="SubjectServlet?type=list">
+		<button
+			class="btn btn-blue">
+			Cancelar</button>
+	</a>
+	<a href="http://localhost:8080/Proyecto_BD/index.jsp">
+		<button class="btn btn-blue">Salir</button>
+	</a>
 </body>
 
 <script type="text/javascript"
