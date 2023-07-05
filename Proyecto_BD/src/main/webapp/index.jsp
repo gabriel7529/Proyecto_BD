@@ -15,6 +15,7 @@
         <li><a href="Servlet3?type=list">Categorías</a></li>
         <li><a href="Servlet4?type=list">Unidad de medida</a></li>
         <li><a href="Servlet5?type=list">Rubro proveedores</a></li>
+        <li><a href="Servlet6?type=list">Almacenes</a></li>
     </ul>
 </body>
 </html>
