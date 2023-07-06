@@ -7,14 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/unidadLista.css" />
-<title>Lista de Unidades de medida</title>
+<title>Lista de los clientes</title>
 </head>
 <body>
 	<div class='container'>
 		<div class='row'>
 			<div class='col-6 col-sm-4'>
 				<div class='col-6 col-sm-4'>
-					<h3>Lista de Unidades de medida</h3>
+					<h3>Lista de los clientes</h3>
 					<a href="http://localhost:8080/Proyecto_BD/Cliente.jsp">
 						<button class="btn btn-blue">Adiccionar</button>
 					</a>

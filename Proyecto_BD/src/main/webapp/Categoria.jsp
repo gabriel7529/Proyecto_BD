@@ -22,7 +22,7 @@
 				type="text" name="code" id="code" placeholder="Código" /><br>
 			<br> <label for="name">Nombre de la categoria</label><br> <input
 				type="text" name="name" id="name" placeholder="Nombre" /><br>
-			<br> <label for="RUC">Estado</label><br> <br> <label
+				<label
 				for="estado">Estado de la categoria</label><br> <input
 				type="text" name="estado" id="estado" value="A" readonly
 				onmousedown="return false;" /><br> <input type="hidden"

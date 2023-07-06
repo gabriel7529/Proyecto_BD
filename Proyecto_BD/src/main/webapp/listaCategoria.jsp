@@ -7,15 +7,15 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/unidadLista.css" />
-<title>Lista de Unidades de medida</title>
+<title>Lista de Categorias</title>
 </head>
 <body>
 	<div class='container'>
 		<div class='row'>
 			<div class='col-6 col-sm-4'>
 				<div class='col-6 col-sm-4'>
-					<h3>Lista de Unidades de medida</h3>
-					<a href="http://localhost:8080/Proyecto_BD/Unidad.jsp">
+					<h3>Lista de Categorias</h3>
+					<a href="http://localhost:8080/Proyecto_BD/Categoria.jsp">
 						<button class="btn btn-blue">Adiccionar</button>
 					</a>
 					<table class='table'>
