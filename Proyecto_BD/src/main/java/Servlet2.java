@@ -63,10 +63,16 @@ public class Servlet2 extends HttpServlet {
 			editSubject(request, response);
 			break;
 		case "delete":
-			deleteSubject(request, response);
+			getSubject(request, response, type);
 			break;
 		case "info":
-			getSubject(request, response);
+			getSubject(request, response, type);
+			break;
+		case "reac":
+			getSubject(request, response, type);
+			break;
+		case "inac":
+			getSubject(request, response, type);
 			break;
 		default:
 			request.setAttribute("mensaje", "Ocurrió un problema");
@@ -84,7 +90,7 @@ public class Servlet2 extends HttpServlet {
 		request.getRequestDispatcher("Producto.jsp").forward(request, response);
 	}
 
-	private void deleteSubject(HttpServletRequest request, HttpServletResponse response)
+/*	private void deleteSubject(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String idSubject = request.getParameter("id");
 		ProductosModel productosModel = new ProductosModel();
@@ -94,7 +100,7 @@ public class Servlet2 extends HttpServlet {
 		request.setAttribute("data", data);
 		request.getRequestDispatcher("listaProducto.jsp").forward(request, response);
 	}
-
+*/
 	private void editSubject(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -124,8 +130,7 @@ public class Servlet2 extends HttpServlet {
 		List<Productos> data = clienteModel.listSubject();
 		
 		request.setAttribute("data", data);
-		
-		request.getRequestDispatcher("listaProducto.jsp").forward(request, response);
+		listSubject(request, response);
 	}
 
 	protected void registerSubject(HttpServletRequest request, HttpServletResponse response)
@@ -167,26 +172,44 @@ public class Servlet2 extends HttpServlet {
 			throws ServletException, IOException {
 		ProductosModel clienteModel = new ProductosModel();
 
+		
+		CategoriaModel categoriasModel = new CategoriaModel();
+		Unidad_MedidaModel unidadModel = new Unidad_MedidaModel();
 		List<Productos> data = clienteModel.listSubject();
+		List<Unidad_Medida> data3 = unidadModel.listSubject();
+		List<Categoria> data2 = categoriasModel.listSubject();
 		request.setAttribute("data", data);
+		request.setAttribute("data2", data2);
+		request.setAttribute("data3", data3);
 		request.getRequestDispatcher("listaProducto.jsp").forward(request, response);
 
 	}
 
-	protected void getSubject(HttpServletRequest request, HttpServletResponse response)
+	protected void getSubject(HttpServletRequest request, HttpServletResponse response, String opcion)
 			throws ServletException, IOException {
+		String respuesta = "";
 		String idSubject = request.getParameter("id");
-		ProductosModel clienteModel = new ProductosModel();
-		Productos subject = clienteModel.getSubject(idSubject);
+		ProductosModel productosModel = new ProductosModel();
+		Productos subject = productosModel.getSubject(idSubject);
+		if(opcion.equals("info"))
+			respuesta = subject.getProEstReg();
+		else if (opcion.equals ("reac"))
+			respuesta = "A";
+		else if (opcion.equals("inac"))
+			respuesta = "I";
+		else
+			respuesta = "*";
 		CategoriaModel categoriasModel = new CategoriaModel();
 		Unidad_MedidaModel unidadModel = new Unidad_MedidaModel();
-		List<Productos> data = clienteModel.listSubject();
+		List<Productos> data = productosModel.listSubject();
 		List<Unidad_Medida> data3 = unidadModel.listSubject();
 		List<Categoria> data2 = categoriasModel.listSubject();
 		request.setAttribute("subject", subject);
 		request.setAttribute("data", data);
 		request.setAttribute("data2", data2);
 		request.setAttribute("data3", data3);
+		request.setAttribute("type", opcion);
+		request.setAttribute("respuesta", respuesta);
 		request.getRequestDispatcher("EditarProducto.jsp").forward(request, response);
 	}
 }

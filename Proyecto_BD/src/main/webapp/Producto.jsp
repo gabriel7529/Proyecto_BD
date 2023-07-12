@@ -41,12 +41,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css " 
 	 <label for="name">Precio de compra del producto</label><br>    
 	 <input type="text" name="precioc" id="precioc" placeholder="Precio de Compra"/><br><br>
 	 <label for="estado">Estado</label><br>     
-	 <select id="estado" name="estado">
-            <option value="A">Activo</option>
-            <option value="I">Inactivo</option>
-            <option value="N">Desconocido</option>
-            
-     </select><br><br>
+	 <input type="text" name="estado" id="estado" value="A" readonly onmousedown="return false;" /><br> 
      <label for="name">Categoria del producto</label><br>    
 	 <select id="codcat" name="codcat">
 	 <%	
