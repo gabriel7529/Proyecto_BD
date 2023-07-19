@@ -1,7 +1,7 @@
 <%@ page import="java.util.*"%>
 <%@ page import="clases.Almacenes"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +21,8 @@
 					<table class='table'>
 						<thead>
 							<tr>
-								<th>NÃºmero</th>
-								<th>DirecciÃ³n</th>
+								<th>Número</th>
+								<th>Dirección</th>
 								<th>Estado</th>
 								<th class="actions hidden">Opciones</th>
 							</tr>
@@ -31,8 +31,7 @@
 							<%
 							List<Almacenes> listSubject = (List<Almacenes>) request.getAttribute("data");
 							if (listSubject != null) {
-								for (Almacenes item : listSubject) {
-							%>
+								for (Almacenes item : listSubject) {				%>
 							<tr onclick="selectRow(this);">
 								<td><%=item.getAlmNum()%></td>
 								<td><%=item.getAlmDir()%></td>

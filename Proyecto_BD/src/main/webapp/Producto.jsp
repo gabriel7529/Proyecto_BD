@@ -27,9 +27,11 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css " 
 			List<Unidad_Medida> listSubject = (List<Unidad_Medida>) request.getAttribute("data");
 			if(listSubject != null){
 				for(Unidad_Medida item: listSubject){
+					if(!item.getUniMedEst().equals("*")){
 	  %>
 	  <option value=<%= item.getUniMedCod() %>> <%= item.getUniMedNom()%> </option>
 	  <%
+					}
 				}
 			}
 	  %>
@@ -48,9 +50,11 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css " 
 			List<Categoria> listSubject2 = (List<Categoria>) request.getAttribute("data2");
 			if(listSubject != null){
 				for(Categoria item: listSubject2){
+					if(!item.getEstado().equals("*")){
 	  %>
 	  <option value=<%= item.getCatProCod() %>> <%= item.getNombre()%> </option>
 	  <%
+					}
 				}
 			}
 	  %>

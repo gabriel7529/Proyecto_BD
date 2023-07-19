@@ -1,10 +1,10 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@page import="clases.Productos_Entradas_Cabecera"%>
 <%@page import="clases.Proveedores"%>
 <%@page import="clases.Estantes"%>
 <%@ page import="java.util.*"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +22,7 @@
 			<input type="hidden" name="type" id="type" value="edit">
 			<div class="form-group">
 				<h1>Editar Entradas Producto Cabecera</h1>
-				<label class="text-secondary">CÃ³digo</label><br> <input
+				<label class="text-secondary">Código</label><br> <input
 					class="form-control" type="text" name="code" id="code"
 					value="<%=(subject != null) ? subject.getEntCabCod() : ""%>"
 					readonly onmousedown="return false;">
@@ -63,7 +63,7 @@
 				%>
 			</select><br> <br>
 			<div class="form-group">
-				<label class="text-secondary">AÃ±o</label><br> <input
+				<label class="text-secondary">Año</label><br> <input
 					class="form-control" type="text" name="ano" id="ano"
 					value="<%=(subject != null) ? subject.getEntcabfecAno() : ""%>"
 					<%=(type.equals("info") && !rsp.equals("I") && !rsp.equals("*")) ? "" : "readonly"%>>
@@ -75,7 +75,7 @@
 					<%=(type.equals("info") && !rsp.equals("I") && !rsp.equals("*")) ? "" : "readonly"%>>
 			</div>
 			<div class="form-group">
-				<label class="text-secondary">DÃ­a</label><br> <input
+				<label class="text-secondary">Día</label><br> <input
 					class="form-control" type="text" name="dia" id="dia"
 					value="<%=(subject != null) ? subject.getEntcabfecDia() : ""%>"
 					<%=(type.equals("info") && !rsp.equals("I") && !rsp.equals("*")) ? "" : "readonly"%>>

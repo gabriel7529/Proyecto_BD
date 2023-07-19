@@ -2,8 +2,8 @@
 <%@ page import="clases.Productos_Entradas_Cabecera"%>
 <%@page import="clases.Proveedores"%>
 <%@page import="clases.Estantes"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,12 +24,12 @@
 					<table class='table'>
 						<thead>
 							<tr>
-								<th>CÃ³digo</th>
+								<th>Código</th>
 								<th>Nombre de Proveedor</th>
 								<th>Capacidad del estante</th>
-								<th>AÃ±o</th>
+								<th>Año</th>
 								<th>Mes</th>
-								<th>DÃ­a</th>
+								<th>Día</th>
 								<th>Estado</th>
 								<th class="actions hidden">Opciones</th>
 							</tr>
@@ -46,7 +46,7 @@
 									for(Estantes item2 : listSubject3) {
 										if(item2.getEstNum() == item.getEstNum()) {
 											if(item2.getEstReg().equals("*")){
-												Proveedores = "Eliminado";
+												Proveedores = String.valueOf(item2.getEstCap() + " *");
 												break;
 											}
 											Proveedores = String.valueOf(item2.getEstCap());
@@ -59,7 +59,7 @@
 								<td><%for (Proveedores item3 : listSubject2) {
 										if (item3.getPrvCod() == item.getPrvCod()) {
 											if(item3.getPrvEstReg().equals("*")){
-												Proveedores = "Eliminado";
+												out.print(item3.getPrvNom() + " *");
 												break;
 											}
 											out.print(item3.getPrvNom());

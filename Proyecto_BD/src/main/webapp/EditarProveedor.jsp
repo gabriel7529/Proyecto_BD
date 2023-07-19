@@ -1,10 +1,10 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@page import="clases.Proveedores"%>
 <%@page import="clases.RubroProveedor"%>
 
 <%@ page import="java.util.*"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +22,7 @@
 			<input type="hidden" name="type" id="type" value="edit">
 			<div class="form-group">
 				<h1>Editar Proveedor</h1>
-				<label class="text-secondary">CÃ³digo Proveedor</label><br> <input
+				<label class="text-secondary">Código Proveedor</label><br> <input
 					class="form-control" type="text" name="code" id="code"
 					value="<%=(subject != null) ? subject.getPrvCod() : ""%>" readonly
 					onmousedown="return false;">
@@ -34,13 +34,13 @@
 					<%=(type.equals("info") && !texto.equals("I") && !texto.equals("*")) ? "" : "readonly"%>>
 			</div>
 			<div class="form-group">
-				<label class="text-secondary">TelÃ©fono Proveedor</label><br> <input
+				<label class="text-secondary">Teléfono Proveedor</label><br> <input
 					class="form-control" type="text" name="phone" id="phone"
 					value="<%=(subject != null) ? subject.getPrvTel() : ""%>"
 					<%=(type.equals("info") && !texto.equals("I") && !texto.equals("*")) ? "" : "readonly"%>>
 			</div>
 			<div class="form-group">
-				<label class="text-secondary">DirecciÃ³n Proveedor</label><br> <input
+				<label class="text-secondary">Dirección Proveedor</label><br> <input
 					class="form-control" type="text" name="dir" id="dir"
 					value="<%=(subject != null) ? subject.getProDir() : ""%>"
 					<%=(type.equals("info") && !texto.equals("I") && !texto.equals("*")) ? "" : "readonly"%>>

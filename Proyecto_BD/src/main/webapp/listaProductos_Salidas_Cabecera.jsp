@@ -2,8 +2,8 @@
 <%@ page import="clases.Productos_Salidas_Cabecera"%>
 
 <%@page import="clases.Clientes"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,12 +24,12 @@
 					<table class='table'>
 						<thead>
 							<tr>
-								<th>CÃ³digo</th>
+								<th>Código</th>
 								<th>Nombre del Cliente</th>
 								<th>Precio Total</th>
-								<th>AÃ±o</th>
+								<th>Año</th>
 								<th>Mes</th>
-								<th>DÃ­a</th>
+								<th>Día</th>
 								<th>Pago</th>
 								<th>IGV</th>
 								<th>Importe Total</th>
@@ -48,7 +48,7 @@
 									for(Clientes item2 : listSubject3) {
 										if(item2.getCliCod() == item.getCliCod()) {
 											if(item2.getCliEst().equals("*")){
-												Proveedores = "Eliminado";
+												Proveedores = String.valueOf(item2.getCliNom()) + " *";
 												break;
 											}
 											Proveedores = String.valueOf(item2.getCliNom());

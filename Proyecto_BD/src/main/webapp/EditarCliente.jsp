@@ -1,7 +1,7 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@page import="clases.Clientes"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +19,7 @@
 			<input type="hidden" name="type" id="type" value="edit">
 			<div class="form-group">
 				<h1>Editar Cliente</h1>
-				<label class="text-secondary">CÃ³digo</label><br> <input
+				<label class="text-secondary">Código</label><br> <input
 					name="code" id="code"
 					value="<%=(subject != null) ? subject.getCliCod() : ""%>"
 					value="<%=texto%>" readonly onmousedown="return false;">
@@ -37,7 +37,7 @@
 					<%=(type.equals("info") && !texto.equals("I") && !texto.equals("*")) ? "" : "readonly"%>>
 			</div>
 			<div class="form-group">
-				<label class="text-secondary">DirecciÃ³n</label><br> <input
+				<label class="text-secondary">Dirección</label><br> <input
 					class="form-control" type="text" name="direc" id="direc"
 					value="<%=(subject != null) ? subject.getCliDir() : ""%>"
 					<%=(type.equals("info") && !texto.equals("I") && !texto.equals("*")) ? "" : "readonly"%>>

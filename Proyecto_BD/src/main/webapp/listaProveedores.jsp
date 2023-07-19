@@ -2,8 +2,8 @@
 <%@ page import="clases.Proveedores"%>
 <%@page import="clases.RubroProveedor"%>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,10 +25,10 @@
 					<table class='table'>
 						<thead>
 							<tr>
-								<th>CÃ³digo</th>
+								<th>Código</th>
 								<th>Nombre</th>
-								<th>TelÃ©fono</th>
-								<th>DirecciÃ³n</th>
+								<th>Teléfono</th>
+								<th>Dirección</th>
 								<th>Rubro</th>
 								<th>Estado</th>
 								<th class="actions hidden">Opciones</th>
@@ -45,7 +45,7 @@
 									for(RubroProveedor item2 : listSubject2) {
 										if(item2.getRubProCod() == item.getRubPrv()) {
 											if(item2.getRubEstReg().equals("*")){
-												RubroProveedor = "Eliminado";
+												RubroProveedor = String.valueOf(item2.getRubNom()) + " *";
 												break;
 											}
 											RubroProveedor = String.valueOf(item2.getRubNom());

@@ -1,8 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@page import="clases.RubroProveedor"%>
-
 <%@page import="java.lang.String"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +21,7 @@
 		<input type="hidden" name="type" id="type" value="edit">
 		<div class="form-group">
 		<h1>Editar Unidad de Medida</h1>
-			<label class="text-secondary">CÃ³digo</label><br><input name="code"
+			<label class="text-secondary">Código</label><br><input name="code"
 				id="code" value="<%=(subject != null) ? subject.getRubProCod() : ""%>"
 				readonly onmousedown="return false;">
 		</div>

@@ -34,11 +34,13 @@
 				List<RubroProveedor> listSubject = (List<RubroProveedor>) request.getAttribute("data");
 				if (listSubject != null) {
 					for (RubroProveedor item : listSubject) {
+						if(!item.getRubEstReg().equals("*")){
 				%>
 				<option value=<%=item.getRubProCod()%>>
 					<%=item.getRubNom()%>
 				</option>
 				<%
+						}
 				}
 				}
 				%>

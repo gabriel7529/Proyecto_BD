@@ -2,8 +2,8 @@
 <%@ page import="clases.Productos_Entradas_Detalle"%>
 <%@page import="clases.Productos"%>
 <%@page import="clases.Productos_Entradas_Cabecera"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,9 +24,9 @@
 					<table class='table'>
 						<thead>
 							<tr>
-								<th>CÃ³digo</th>
+								<th>Código</th>
 								<th>Nombre del producto</th>
-								<th>CÃ³digo de la cabecera</th>
+								<th>Código de la cabecera</th>
 								<th>Cantidad</th>
 								<th>Estado</th>
 								<th class="actions hidden">Opciones</th>
@@ -44,7 +44,7 @@
 									for(Productos_Entradas_Cabecera item2 : listSubject3) {
 										if(item2.getEntCabCod() == item.getEntCabCod()) {
 											if(item2.getEntcabestReg().equals("*")){
-												Productos = "Eliminado";
+												Productos =  String.valueOf(item2.getEntCabCod()) + " *";
 												break;
 											}
 											Productos = String.valueOf(item2.getEntCabCod());
@@ -57,7 +57,7 @@
 								<td><%for (Productos item3 : listSubject2) {
 										if (item3.getProCod() == item.getProCod()) {
 											if(item3.getProEstReg().equals("*")){
-												Productos = "Eliminado";
+												out.print(item3.getProNom() + " *");
 												break;
 											}
 											out.print(item3.getProNom());

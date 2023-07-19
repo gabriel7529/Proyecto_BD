@@ -2,8 +2,8 @@
 <%@ page import="clases.Productos_Salidas_Detalle"%>
 <%@page import="clases.Productos"%>
 <%@page import="clases.Productos_Salidas_Cabecera"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +24,7 @@
 					<table class='table'>
 						<thead>
 							<tr>
-								<th>CÃ³digo</th>
+								<th>Código</th>
 								<th>Nombre del producto</th>
 								<th>Cantidad</th>
 								<th>Precio Total</th>
@@ -44,7 +44,7 @@
 									for(Productos_Salidas_Cabecera item2 : listSubject3) {
 										if(item2.getSalCod() == item.getSalCod()) {
 											if(item2.getEntcabestReg().equals("*")){
-												Productos = "Eliminado";
+												Productos = String.valueOf(item2.getSalCod()) + " *";
 												break;
 											}
 											Productos = String.valueOf(item2.getSalCod());
@@ -57,7 +57,7 @@
 								<td><%for (Productos item3 : listSubject2) {
 										if (item3.getProCod() == item.getProCod()) {
 											if(item3.getProEstReg().equals("*")){
-												Productos = "Eliminado";
+												out.print(item3.getProNom() + " *");
 												break;
 											}
 											out.print(item3.getProNom());

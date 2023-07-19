@@ -28,11 +28,13 @@
 				List<Clientes> listSubject = (List<Clientes>) request.getAttribute("data");
 				if (listSubject != null) {
 					for (Clientes item : listSubject) {
+						if(!item.getCliEst().equals("*")){
 				%>
 				<option value=<%=item.getCliCod()%>>
 					<%=item.getCliNom()%>
 				</option>
 				<%
+					}
 				}
 				}
 				%>

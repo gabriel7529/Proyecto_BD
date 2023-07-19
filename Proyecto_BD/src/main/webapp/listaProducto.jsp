@@ -2,8 +2,8 @@
 <%@ page import="clases.Productos"%>
 <%@page import="clases.Categoria"%>
 <%@page import="clases.Unidad_Medida"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +25,7 @@
 					<table class='table'>
 						<thead>
 							<tr>
-								<th>CÃ³digo</th>
+								<th>Código</th>
 								<th>Nombre</th>
 								<th>Unidad de medida</th>
 								<th>Stock</th>
@@ -48,7 +48,7 @@
 									for(Unidad_Medida item2 : listSubject3) {
 										if(item2.getUniMedCod() == item.getUniMedCod()) {
 											if(item2.getUniMedEst().equals("*")){
-												categoria = "Eliminado";
+												categoria =  item2.getUniMedNom() + " *";
 												break;
 											}
 											categoria = item2.getUniMedNom();
@@ -67,7 +67,7 @@
 								<td><%for (Categoria item3 : listSubject2) {
 										if (item3.getCatProCod() == item.getProCat()) {
 											if(item3.getEstado().equals("*")){
-												categoria = "Eliminado";
+												out.print(item3.getNombre() + "*");
 												break;
 											}
 											out.print(item3.getNombre());

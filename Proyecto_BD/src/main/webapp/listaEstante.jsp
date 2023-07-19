@@ -2,8 +2,8 @@
 <%@ page import="clases.Estantes"%>
 <%@page import="clases.Almacenes"%>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,8 +25,8 @@
 					<table class='table'>
 						<thead>
 							<tr>
-								<th>NÃºmero</th>
-								<th>CÃ³digo Almacen</th>
+								<th>Número</th>
+								<th>Código Almacen</th>
 								<th>Capacidad</th>
 								<th>Estado</th>
 								
@@ -44,7 +44,7 @@
 									for(Almacenes item2 : listSubject2) {
 										if(item2.getAlmNum() == item.getAlmNum()) {
 											if(item2.getAlmEstReg().equals("*")){
-												Almacenes = "Eliminado";
+												Almacenes = String.valueOf(item2.getAlmNum()) + " *";
 												break;
 											}
 											Almacenes = String.valueOf(item2.getAlmNum());

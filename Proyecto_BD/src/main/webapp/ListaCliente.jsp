@@ -1,7 +1,7 @@
 <%@ page import="java.util.*"%>
 <%@ page import="clases.Clientes"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,10 +21,10 @@
 					<table class='table'>
 						<thead>
 							<tr>
-								<th>CÃ³digo</th>
+								<th>Código</th>
 								<th>Nombre</th>
 								<th>RUC</th>
-								<th>DirecciÃ³n</th>
+								<th>Dirección</th>
 								<th>Estado</th>
 								<th class="actions hidden">Opciones</th>
 							</tr>

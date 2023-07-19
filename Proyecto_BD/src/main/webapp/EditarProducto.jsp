@@ -1,10 +1,10 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@page import="clases.Productos"%>
 <%@page import="clases.Categoria"%>
 <%@page import="clases.Unidad_Medida"%>
 <%@ page import="java.util.*"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +22,7 @@
 			<input type="hidden" name="type" id="type" value="edit">
 			<div class="form-group">
 				<h1>Editar Producto</h1>
-				<label class="text-secondary">CÃ³digo</label><br> <input
+				<label class="text-secondary">Código</label><br> <input
 					class="form-control" type="text" name="code" id="code"
 					value="<%=(subject != null) ? subject.getProCod() : ""%>" readonly
 					onmousedown="return false;">

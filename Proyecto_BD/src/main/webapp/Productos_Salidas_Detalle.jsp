@@ -28,11 +28,13 @@
 				List<Productos_Salidas_Cabecera> listSubject2 = (List<Productos_Salidas_Cabecera>) request.getAttribute("data");
 				if (listSubject2 != null) {
 					for (Productos_Salidas_Cabecera item : listSubject2) {
+						if(!item.getEntcabestReg().equals("*")){
 				%>
 				<option value=<%=item.getSalCod()%>>
 					<%=item.getSalCod()%>             <%=item.getEntcabfecAno() + "/" + item.getEntcabfecMes() + "/" + item.getEntcabfecDia()%>
 				</option>
 				<%
+						}
 				}
 				}
 				%>
@@ -43,11 +45,13 @@
 				List<Productos> listSubject = (List<Productos>) request.getAttribute("data2");
 				if (listSubject != null) {
 					for (Productos item : listSubject) {
+						if(!item.getProEstReg().equals("*")){
 				%>
 				<option value=<%=item.getProCod()%>>
 					<%=item.getProNom()%>
 				</option>
 				<%
+						}
 				}
 				}
 				%>

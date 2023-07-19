@@ -28,11 +28,13 @@
 				List<Almacenes> listSubject = (List<Almacenes>) request.getAttribute("data");
 				if (listSubject != null) {
 					for (Almacenes item : listSubject) {
+						if(!item.getAlmEstReg().equals("*")){
 				%>
 				<option value=<%=item.getAlmNum()%>>
 					<%=item.getAlmDir()%>
 				</option>
 				<%
+				}
 				}
 				}
 				%>

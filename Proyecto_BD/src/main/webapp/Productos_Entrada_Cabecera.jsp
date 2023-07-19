@@ -28,11 +28,13 @@
 				List<Proveedores> listSubject = (List<Proveedores>) request.getAttribute("data");
 				if (listSubject != null) {
 					for (Proveedores item : listSubject) {
+						if(!item.getPrvEstReg().equals("*")){
 				%>
 				<option value=<%=item.getPrvCod()%>>
 					<%=item.getPrvNom()%>
 				</option>
 				<%
+						}
 				}
 				}
 				%>
@@ -42,6 +44,7 @@
 				List<Estantes> listSubject2 = (List<Estantes>) request.getAttribute("data2");
 				if (listSubject != null) {
 					for (Estantes item : listSubject2) {
+						if (!item.getEstReg().equals("*")) {
 				%>
 				<option value=<%=item.getEstNum()%>>
 					<%=item.getEstCap()%>
@@ -49,18 +52,17 @@
 				<%
 				}
 				}
+				}
 				%>
 			</select> <label for="name">Año</label><br> <input type="text" name="ano"
-				id="ano" placeholder="Año" /><br>
-			<br> <label for="name">Mes</label><br> <input type="text"
-				name="mes" id="mes" placeholder="Mes" /><br>
+				id="ano" placeholder="Año" /><br> <br> <label for="name">Mes</label><br>
+			<input type="text" name="mes" id="mes" placeholder="Mes" /><br>
 			<br> <label for="name">Día</label><br> <input type="text"
-				name="dia" id="dia" placeholder="Día" /><br>
-			<br> <label for="estado">Estado</label><br> <input
-				type="text" name="estado" id="estado" value="A" readonly
+				name="dia" id="dia" placeholder="Día" /><br> <br> <label
+				for="estado">Estado</label><br> <input type="text"
+				name="estado" id="estado" value="A" readonly
 				onmousedown="return false;" /><br> <input type="hidden"
-				name="type" id="type" value="register"> <br>
-			<br>
+				name="type" id="type" value="register"> <br> <br>
 			<button type="submit" class="btn btn-primary">Actualizar</button>
 		</form>
 	</div>
